@@ -1,0 +1,128 @@
+$font-family-medium: Helvetica-Neue-Medium;
+$font-family-bold: Helvetica-Neue-Bold;
+$bg-box-light: #ffffff;
+$bg-box-dark: #242526;
+$bg-header-light: #5d6670;
+$bg-header-dark: #a7abaf;
+
+.container {
+  width: 150px;
+  height: 190px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-box-light;
+  padding: 15px 10px 10px;
+  transition: 0.2s;
+  border-radius: 5px;
+  z-index: 10;
+
+  > .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-left: 7px;
+
+    > .year {
+      font-weight: bold;
+      font-size: var(--font-size-xx-large);
+      cursor: default;
+      transition: 0.2s;
+      font-family: $font-family-bold;
+    }
+
+    > .navigation {
+      margin-top: 3px;
+
+      > .navIcon {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+
+        svg {
+          vertical-align: middle;
+          fill: $bg-header-light;
+        }
+      }
+    }
+  }
+}
+
+.months {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  > .month {
+    $selected-head-color: #1a76f2;
+
+    width: 33.3333%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: $font-family-medium;
+
+    &.selected {
+      background-color: #d8dade;
+    }
+
+    &.selectedFirst {
+      background-color: $selected-head-color;
+      color: #fff;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    &.selectedLast {
+      background-color: $selected-head-color;
+      color: #fff;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+
+    &:not(.selectedFirst):not(.selectedLast):hover {
+      background-color: #d8dade;
+    }
+  }
+}
+
+// dark mode
+.container.dark {
+  $dark-color: #242526;
+  $light-color: #d9dae2;
+  background-color: $dark-color;
+
+  > .navigation {
+    > .navIcon {
+      svg {
+        fill: $bg-header-dark;
+      }
+    }
+  }
+
+  .year {
+    color: $light-color;
+  }
+
+  .month {
+    color: $light-color;
+
+    &.selected {
+      background-color: #4e4f50;
+    }
+
+    &.selectedFirst,
+    &.selectedLast {
+      color: #fff;
+      background-color: #1a76f2;
+    }
+
+    &:not(.selectedFirst):not(.selectedLast):hover {
+      background-color: #4e4f50;
+    }
+  }
+}
