@@ -5,7 +5,7 @@ $bg-box-dark: #242526;
 $bg-header-light: #5d6670;
 $bg-header-dark: #a7abaf;
 
-.container {
+.container_MonthPickerTis {
   width: 150px;
   height: 190px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
@@ -17,13 +17,13 @@ $bg-header-dark: #a7abaf;
   border-radius: 5px;
   z-index: 10;
 
-  > .header {
+  > .header_MonthPickerTis {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     padding-left: 7px;
 
-    > .year {
+    > .year_MonthPickerTis {
       font-weight: bold;
       font-size: var(--font-size-xx-large);
       cursor: default;
@@ -31,10 +31,10 @@ $bg-header-dark: #a7abaf;
       font-family: $font-family-bold;
     }
 
-    > .navigation {
+    > .navigation_MonthPickerTis {
       margin-top: 3px;
 
-      > .navIcon {
+      > .navIcon_MonthPickerTis {
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -49,12 +49,12 @@ $bg-header-dark: #a7abaf;
   }
 }
 
-.months {
+.months_MonthPickerTis {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
 
-  > .month {
+  > .month_MonthPickerTis {
     $selected-head-color: #1a76f2;
 
     width: 33.3333%;
@@ -66,62 +66,62 @@ $bg-header-dark: #a7abaf;
     transition: 0.2s;
     font-family: $font-family-medium;
 
-    &.selected {
+    &.selected_MonthPickerTis {
       background-color: #d8dade;
     }
 
-    &.selectedFirst {
+    &.selectedFirst_MonthPickerTis {
       background-color: $selected-head-color;
       color: #fff;
       border-top-left-radius: 50%;
       border-bottom-left-radius: 50%;
     }
 
-    &.selectedLast {
+    &.selectedLast_MonthPickerTis {
       background-color: $selected-head-color;
       color: #fff;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
     }
 
-    &:not(.selectedFirst):not(.selectedLast):hover {
+    &:not(.selectedFirst_MonthPickerTis):not(.selectedLast_MonthPickerTis):hover {
       background-color: #d8dade;
     }
   }
 }
 
 // dark mode
-.container.dark {
+.container_MonthPickerTis.dark_MonthPickerTis {
   $dark-color: #242526;
   $light-color: #d9dae2;
   background-color: $dark-color;
 
-  > .navigation {
-    > .navIcon {
+  > .navigation_MonthPickerTis {
+    > .navIcon_MonthPickerTis {
       svg {
         fill: $bg-header-dark;
       }
     }
   }
 
-  .year {
+  .year_MonthPickerTis {
     color: $light-color;
   }
 
-  .month {
+  .month_MonthPickerTis {
     color: $light-color;
 
-    &.selected {
+    &.selected_MonthPickerTis {
       background-color: #4e4f50;
     }
 
-    &.selectedFirst,
-    &.selectedLast {
+    &.selectedFirst_MonthPickerTis,
+    &.selectedLast_MonthPickerTis {
       color: #fff;
       background-color: #1a76f2;
     }
 
-    &:not(.selectedFirst):not(.selectedLast):hover {
+    &:not(.selectedFirst_MonthPickerTis):not(.selectedLast_MonthPickerTis):hover {
       background-color: #4e4f50;
     }
   }

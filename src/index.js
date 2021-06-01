@@ -85,17 +85,17 @@ export const MonthPicker = ({
 
   return (
     <div
-      className={classNames(css.container, { [css.dark]: darkMode }, className)}
+      className={classNames(css.container_MonthPickerTis, { [css.dark_MonthPickerTis]: darkMode }, className)}
       {...attrs}
     >
-      <header className={css.header}>
-        <span className={css.year} data-testid='year'>
+      <header className={css.header_MonthPickerTis}>
+        <span className={css.year_MonthPickerTis} data-testid='year'>
           {year}
         </span>
 
-        <div className={css.navigation}>
+        <div className={css.navigation_MonthPickerTis}>
           <button
-            className={css.navIcon}
+            className={css.navIcon_MonthPickerTis}
             onClick={() => {
               setYear(y => y - 1);
             }}
@@ -103,7 +103,7 @@ export const MonthPicker = ({
             <PrevIcon />
           </button>{' '}
           <button
-            className={css.navIcon}
+            className={css.navIcon_MonthPickerTis}
             onClick={() => setYear(y => y + 1)}
           >
             <NextIcon />
@@ -111,14 +111,14 @@ export const MonthPicker = ({
         </div>
       </header>
 
-      <div className={css.months}>
+      <div className={css.months_MonthPickerTis}>
         {months.map((month, index) => (
           <div
             key={index}
-            className={classNames(css.month, {
-              [css.selected]: isSelected(index),
-              [css.selectedFirst]: isSelectedHead(index, true),
-              [css.selectedLast]: isSelectedHead(index, false),
+            className={classNames(css.month_MonthPickerTis, {
+              [css.selected_MonthPickerTis]: isSelected(index),
+              [css.selectedFirst_MonthPickerTis]: isSelectedHead(index, true),
+              [css.selectedLast_MonthPickerTis]: isSelectedHead(index, false),
             })}
             onClick={() => onMonthClick(index)}
           >
