@@ -32,6 +32,7 @@ export const MonthPicker = ({
     start: { ...monthIndicator },
     end: { ...monthIndicator },
   },
+  id,
   ...attrs
 }) => {
   const [year, setYear] = useState(initialRange?.start?.year || currentYear);
@@ -85,6 +86,7 @@ export const MonthPicker = ({
 
   return (
     <div
+      id={id}
       className={classNames(css.container_MonthPickerTis, { [css.dark_MonthPickerTis]: darkMode }, className)}
       {...attrs}
     >
@@ -131,6 +133,7 @@ export const MonthPicker = ({
 };
 
 MonthPicker.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   darkMode: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
